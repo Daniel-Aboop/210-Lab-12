@@ -18,7 +18,6 @@ void printList(const array<string,Size>&list){
         cout<<i+1<<"#: "<<list[i]<<", ";
     }
     cout<<endl;
-    
 }
 
 //In my main code I made a grocery list program which has several functions for manual input, clearing, reading from a file, and exiting the program.
