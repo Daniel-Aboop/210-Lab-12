@@ -9,18 +9,19 @@
 using namespace std;
 const int Size=30;
 
+// I decided to use a reference to the grocery list in order to not make a new array and also make it const so that nothing can be changed 
+//and then print out whatever was inside the array.
+// printList() takes a reference to a string array.
 void printList(const array<string,Size>&list){
     cout<<"Printing List:"<<endl;
-
     for(int i=0;i<Size;i++){
-        
-        cout<<i<<"#: "<<list[i]<<", ";
+        cout<<i+1<<"#: "<<list[i]<<", ";
     }
     cout<<endl;
     
 }
 
-//Used C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-Lab-12\\List.txt
+//In my main code I made a grocery list program which has several functions for manual input, clearing, reading from a file, and exiting the program.
 int main(){
     array<string, Size> GroceryList;
     string filepath;
@@ -43,7 +44,7 @@ int main(){
                 cout<<"Entering data now...."<<endl;
                 string line;
                 int z=0;
-                while(getline(file,line)&&z<=GroceryList.size()){
+                while(getline(file,line)&&z<GroceryList.size()){
                 GroceryList[z]=line;
                 z++;
                 }
@@ -52,10 +53,9 @@ int main(){
         if(response=="M"){
             string hold;
             for(int i=0;i<Size;i++){
-                cout<<"Enter Item for #"<<i;
+                cout<<"Enter Item for #"<<i+1<<endl;
                 getline(cin,hold);
-
-
+                GroceryList[i]=hold;
             }   
         }
         if(response=="L"){
