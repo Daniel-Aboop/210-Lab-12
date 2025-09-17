@@ -35,6 +35,12 @@ int main(){
             else{
                 cout<<"file opened"<<endl;
                 cout<<"Entering data now...."<<endl;
+                string line;
+                while(getline(file,line)){
+                    
+                }
+
+
             }
         }
         if(response=="M"){
