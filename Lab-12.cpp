@@ -10,11 +10,16 @@ using namespace std;
 const int Size=30;
 
 void printList(const array<string,Size>&list){
+    cout<<"Printing List:"<<endl;
 
+    for(int i=0;i<Size;i++){
+        cout<<list[i]<<endl;
+    }
+    cout<<endl;
     
 }
 
-
+//Used C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-Lab-12\\List.txt
 int main(){
     array<string, Size> GroceryList;
     string filepath;
@@ -36,10 +41,12 @@ int main(){
                 cout<<"file opened"<<endl;
                 cout<<"Entering data now...."<<endl;
                 string line;
+                int z=0;
                 while(getline(file,line)){
-                    
+                GroceryList[z]=line;
+                z++;
                 }
-
+                
 
             }
         }
@@ -51,7 +58,7 @@ int main(){
         }
         if(response=="L"){
             if(GroceryList.empty()!=0){
-
+                printList(GroceryList);
             }
             else{
                 
